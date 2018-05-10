@@ -59,7 +59,7 @@ if ($oRs = mysqli_query ($Con, $sql)) {
 $sql = "SELECT max(Jornada) FROM partidos"; 
 if ($oRs = mysqli_query ($Con, $sql)) {
     if ($row = mysqli_fetch_array ($oRs)) {
-        $CantJornadas = 22;   //Tiene la cantidad de jornadas disputadas por el equipo
+        $CantJornadas = 38;   //Tiene la cantidad de jornadas disputadas por el equipo
     }
 }
 
@@ -176,7 +176,7 @@ for ($jor=1; $jor<=$CantJornadas; $jor++) {
 }//Fin de for
 ?>
     <center>
-    <p><B style=color:White><?php echo $Equipo; ?></B></p>
+    <h1><B style=color:White><?php echo $Equipo; ?></B></h1>
     <p><img src=equipos/<?php echo $Eq; ?>.png width=150></p>
     
     <canvas class="table-dark" id="myCanvas" width="<?php echo $CantJornadas * 20 + 20; ?>" height="<?php echo $CantEquipos * 20 + 20; ?>"></canvas>
