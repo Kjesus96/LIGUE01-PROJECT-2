@@ -4,11 +4,12 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <title>FRANCE MAP</title>
-    <style>
+	<style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
         height: 100%;
+		width: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -17,7 +18,6 @@
         padding: 0;
       }
     </style>
-	
 	<?php
 		Extract($_GET);
 		$Host    = "localhost";
@@ -27,7 +27,11 @@
 		$LeagueName="Ligue 1";
 		
 		//echo"<h2><center>$LeagueName</center></h2\n>";
-		echo "<center><img src='logo.png' width=150 height=200></center>\n";
+		echo "<center>
+		<form action='posiciones.php'>
+		  <input type=image src='logo.png' width=150 height=200><br/><br/>
+		  </form>
+		</center>\n";
 		echo "<div id=map></div>	\n";
 		
 		$Con = mysqli_connect($Host, $Usuario, $Clave, $DB);
@@ -51,7 +55,7 @@
       function initialize() 
 		{
 			var france = { lat: 46.717711, lng: 2.426866 };     //Latitud del centro del país    
-			var map = new google.maps.Map(document.getElementById('map'),{ zoom: 5, center: france });
+			var map = new google.maps.Map(document.getElementById('map'),{ zoom: 6, center: france });
 
 			// This event listener calls addMarker() when the map is clicked.
 			google.maps.event.addListener(map, 'click', function(event) {
@@ -110,8 +114,7 @@
 	
   </head>
   
-  <body>
+  <BODY>
     <div id="map"></div>
-  </body
-  
+  </body>  
 </html>

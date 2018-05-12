@@ -140,7 +140,9 @@ for($i = 0; $i < 10; $i++){
 
 //se despliega el resultado  
 echo "<center>
-      <img src='logo.png' width=150 height=200><br/><br/>
+	  <form action='mapa.php'>
+      <input type=image src='logo.png' width=150 height=200><br/><br/>
+	  </form>
       <table border=1 cellspacing=0 cellpadding=2 class=table bordercolor=338AC9 style=width:50,height:75% > 
 	  <thead class=thead-dark>
       <tr>
@@ -161,16 +163,17 @@ echo "<center>
 $Contador = 0;
 while ($row = mysqli_fetch_row($posicionesTabla)){ 
     $Contador++;  
+    $row2[0] = str_replace("_", " ", $row[0]); 
     echo "<tr class=table-light>  
           <td><center><img src='equipos/$row[0].png' width=32 height=32></center></td>"; 
 		  $row[0] = str_replace(" ", "_", $row[0]);
           echo "
           <td><center><A HREF=Grafico.php?Eq=".($row[0])." style=color:#000000>$Contador</A></center></td>";
-          $row[0] = str_replace("_", " ", $row[0]);
+          //$row[0] = str_replace("_", " ", $row[0]);
           $row[0] = str_replace(" ", "_", $row[0]);
           echo "
-          <td><center><A HREF=VerEquipos.php?Eq=".($row[0])." style=color:#000000>$row[0]</A></center></td>";
-          $row[0] = str_replace("_"," ", $row[0]);	
+          <td><center><A HREF=VerEquipos.php?Eq=".($row[0])." style=color:#000000>$row2[0]</A></center></td>";
+          $row[0]= str_replace("_"," ", $row[0]);	
           echo "
           <td><center>$row[1]</center></td>  
           <td><center>$row[2]</center></td> 
