@@ -47,27 +47,23 @@
       <table class=table border=1 cellspacing=0 cellpadding=0 bordercolor="338AC9" style=width:50> 
       <thead class=thead-dark>
 	  <tr>
-      <th><center>ID</center></th>
 	  <th><center>Jornada</center></th>  
       <th><center>Fecha</center></th>
       <th><center>Local</center></th>
       <th><center>Visita</center></th>
-	  <th><center>GolesLocal</center></th>
-      <th><center>GolesVisita</center></th> 
+	  <th><center>Marcador</center></th>
 	  <th> </th>
 	  </thead>	  
       </tr>';
-
+		//<td><center>$row[0]</center></td>		
     	while($row = mysqli_fetch_array($oRs)){
-    	echo "<tr class=table-light> 
-          <td><center>$row[0]</center></td>  
+    	echo"<tr class=table-light>
           <td><center>$row[1]</center></td> 
           <td><center>$row[2]</center></td>  
           <td><center>$row[3]</center></td>  
           <td><center>$row[4]</center></td>
-          <td><center>$row[5]</center></td>
-          <td><center>$row[6]</center></td>
-		  <td><center><input type=image SRC='google_maps.png' WIDTH=25 HEIGHT=25></input></center></td>";   
+          <td><center>$row[5]:$row[6]</center></td>
+		  <td><center><A HREF=mapa.php?id=$row[0]><img src='google_maps.png' width=32></center></td>";   
           echo "</tr>";
     	}
     	echo "</table>";

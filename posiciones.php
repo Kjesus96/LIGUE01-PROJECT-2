@@ -140,7 +140,7 @@ for($i = 0; $i < 10; $i++){
 
 //se despliega el resultado  
 echo "<center>
-	  <form action='mapa.php'>
+	  <form action='mapaEquipos.php'>
       <input type=image src='logo.png' width=150 height=200><br/><br/>
 	  </form>
       <table border=1 cellspacing=0 cellpadding=2 class=table bordercolor=338AC9 style=width:50,height:75% > 
