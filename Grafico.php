@@ -59,7 +59,7 @@ if ($oRs = mysqli_query ($Con, $sql)) {
 $sql = "SELECT max(Jornada) FROM partidos"; 
 if ($oRs = mysqli_query ($Con, $sql)) {
     if ($row = mysqli_fetch_array ($oRs)) {
-        $CantJornadas = 38;   //Tiene la cantidad de jornadas disputadas por el equipo
+        $CantJornadas = $row[0];   //Tiene la cantidad de jornadas disputadas por el equipo
     }
 }
 
